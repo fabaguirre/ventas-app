@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>{{ titulo }}</h1>
+</div>
+<form class="container">
+    <div class="form-group row">
+        <label for="nombre" class="col-form-label col-sm-2">Nombre</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="producto.nombre" name="nombre">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="correo" class="col-form-label col-sm-2">Precio Unitario</label>
+        <div class="col-sm-6">
+            <input type="number" placeholder="1.0" step="0.1" min="0" class="form-control" [(ngModel)]="producto.precioUnitario" name="email">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="unidad" class="col-form-label col-sm-2">Unidad</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" [(ngModel)]="producto.unidad" name="unidad">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="stock" class="col-form-label col-sm-2">Stock</label>
+        <div class="col-sm-6">
+            <input type="number" placeholder="0" min="0" class="form-control" [(ngModel)]="producto.stock" name="stock">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <button class="btn btn-success" role="button" (click)='create()' *ngIf="!producto.id else elseBlock"><i class="fas fa-save"></i> Crear Producto</button>
+            <ng-template #elseBlock>
+                <button class="btn btn-success" role="button" (click)='update()'>
+                    <i class="fas fa-save"></i> Actualizar
+                </button>
+            </ng-template>
+        </div>
+    </div>
+</form>

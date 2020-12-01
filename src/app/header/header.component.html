@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #000000;">
+  <a class="navbar-brand" href="#"> <i class="fas fa-store"></i> La Ventanita</a>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" id="collapsibleNavId">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item dropdown" *ngIf="isLogged">
+        <a class="nav-link dropdown-toggle" routerLink="/productos" id="dropdownId" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Productos</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownId" *ngIf="isAdmin">
+          <a class="dropdown-item" routerLink="/productos/form">Nuevo</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" *ngIf="isLogged">
+        <a class="nav-link dropdown-toggle" routerLink="/ventas" id="dropdownId" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">Venta</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownId">
+          <a class="dropdown-item" routerLink="/ventas/form">Nueva</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" *ngIf="!isLogged">
+        <a class="nav-link" routerLink="/login"> <i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
+      </li>
+      <li class="nav-item" *ngIf="isLogged" (click)="onLogOut()">
+        <a class="nav-link" style="cursor: pointer;"> <i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+      </li>
+    </ul>
+  </div>
+</nav>
