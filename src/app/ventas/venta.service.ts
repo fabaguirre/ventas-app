@@ -8,7 +8,7 @@ import { Venta } from './venta';
 })
 export class VentaService {
 
-  private url: string = 'http://localhost:8080/api/ventas'
+  private url: string = 'https://ventasoft0.herokuapp.com/api/ventas'
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
   constructor(private http: HttpClient) { }
 

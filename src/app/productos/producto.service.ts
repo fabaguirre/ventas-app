@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ProductoService {
 
-  private url: string = 'http://localhost:8080/api/productos'
+  private url: string = 'https://ventasoft0.herokuapp.com/api/productos'
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
   constructor(private http: HttpClient) { }
 
